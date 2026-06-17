@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 function Header() {
-    const [isopen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
     return (
         <div className="flex justify-between px-6 bg-black items-center ">
 
@@ -21,7 +21,10 @@ function Header() {
                     <li>Explore</li>
                     <li>Streak</li>
                     <li>
-                        <img className="rounded-full h-10" src="https://lh3.googleusercontent.com/a/ACg8ocI3DRYAUlcRj7B4UBziOkpw-L_HzuSCOH1vS6agBl68Zh4MFvoUwQ=s96-c" alt="user picture" />
+                        <div className="flex gap-2 items-center justify-center">
+                            <img onClick={() => setIsOpen(o => !o)} className="rounded-full h-10" src="https://lh3.googleusercontent.com/a/ACg8ocI3DRYAUlcRj7B4UBziOkpw-L_HzuSCOH1vS6agBl68Zh4MFvoUwQ=s96-c" alt="user picture" />
+                            <span>{isOpen ? "▲" : "▼"}</span>
+                        </div>
                     </li>
                 </ul>
             </div>
