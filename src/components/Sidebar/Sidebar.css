@@ -1,0 +1,15 @@
+.sidebar-container {
+    top: 0;
+
+}
+
+.cancel-btn {
+    position: absolute;
+    right: 25px;
+    font-weight: 600;
+}
+
+.cancel-btn:hover {
+    cursor: pointer;
+
+}
