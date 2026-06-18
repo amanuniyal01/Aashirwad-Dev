@@ -1,5 +1,6 @@
 import { useState } from "react"
-import userImg from "../assets/user-image.jpg"
+import userImg from "../../assets/user-image.jpg"
+import "./Header.css"
 function Header() {
     const [isOpen, setIsOpen] = useState(false)
     const list = [
@@ -15,16 +16,16 @@ function Header() {
         <div className="flex justify-between px-6 bg-black items-center ">
 
             {/* Sidebar btn */}
-            <div className="flex gap-3 ">
+            <div className="flex sidebar-logo gap-3 ">
                 <div className="text-white">
                     =
                 </div>
-                <div>
+                <div className="site-logo">
                     <img src="https://do6gp1uxl3luu.cloudfront.net/banner+and+logos/name.webp" height={130} width={130} />
                 </div>
             </div>
             <div >
-                <ul className="flex gap-8 items-center py-2 justify-center text-white">
+                <ul className="header-list flex gap-8 items-center py-2 justify-center text-white">
                     <li>Interview Practice</li>
                     <li>Courses</li>
                     <li>Explore</li>
