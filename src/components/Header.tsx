@@ -9,6 +9,7 @@ function Header() {
         { id: 4, name: "Become Affiliate" },
         { id: 5, name: "Need Help" },
         { id: 6, name: "Light Mode" },
+        { id: 7, name: "Logout" },
     ]
     return (
         <div className="flex justify-between px-6 bg-black items-center ">
@@ -31,16 +32,16 @@ function Header() {
                     <li>
                         <div className="flex gap-2 items-center justify-center">
                             <img onClick={() => setIsOpen(o => !o)} className="rounded-full h-10" src={userImg} alt="user picture" />
-                            <span>{isOpen ? "▲" : "▼"}</span>
+                            <span>{isOpen ? "˄" : "˅"}</span>
                         </div>
                     </li>
                 </ul>
 
             </div>
-            {isOpen && <div className="bg-black absolute right-5 top-15">
+            {isOpen && <div className="bg-black p-2 rounded-lg absolute right-5 top-15">
                 {list.map((item) => (
-                    <ul className="text-white">
-                        <li key={item.id}>
+                    <ul className="text-white ">
+                        <li className="m-1 text-sm hover:cursor-pointer hover:text-blue-300" key={item.id}>
                             {item.name}
                         </li>
                     </ul>
