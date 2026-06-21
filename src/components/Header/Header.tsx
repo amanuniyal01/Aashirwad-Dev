@@ -1,13 +1,12 @@
 import { useState } from "react"
 import userImg from "../../assets/user-image.jpg"
 import "./Header.css"
-import type { AppDispatch, RootState } from "../../store/store"
-import { useDispatch, useSelector } from "react-redux"
+import type { AppDispatch } from "../../store/store"
+import { useDispatch } from "react-redux"
 import { openSidebar } from "../../Slices/appSlice"
 function Header() {
     const [isOpen, setIsOpen] = useState(false)
     const dispatch = useDispatch<AppDispatch>()
-    const sidebarOpen = useSelector((state: RootState) => state.sidebarOpen.isOpen)
     const list = [
         { id: 1, name: "Profile" },
         { id: 2, name: "Settings" },
