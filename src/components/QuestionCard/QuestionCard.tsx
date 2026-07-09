@@ -7,7 +7,14 @@ type Props = {
     companies: string[];
     time: number
 }
+import { MdAccessTime } from "react-icons/md";
 import "./QuestionCard.css"
+import { FaReact } from "react-icons/fa";
+const difficultyClass = {
+    Easy: "easy",
+    Medium: "medium",
+    Hard: "hard",
+};
 function QuestionCard({ title, description, tech, difficulty, companies, time }: Props) {
     return (
         <div className="cardContainer">
@@ -15,17 +22,19 @@ function QuestionCard({ title, description, tech, difficulty, companies, time }:
             <p>{description}</p>
             <div className="techDetails">
                 <div className="highlightDetails">
-                    <p>{tech}</p>
-                    <p>{difficulty}</p>
+                    <div className="techStack radius-md" > <FaReact color="#61DBFB" size={20} /><p>{tech}</p></div>
+                    <p className={`${difficultyClass[difficulty]} radius-md`}>
+                        {difficulty}
+                    </p>
                     <p>{companies}</p>
                 </div>
                 <div className="time">
-                    {time} mins
+                    <MdAccessTime /> {time} mins
                 </div>
             </div>
 
 
-        </div>
+        </div >
     )
 }
 

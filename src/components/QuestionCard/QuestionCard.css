@@ -1,10 +1,14 @@
+@import "../../../styles/variable.css";
+
 .cardContainer {
     display: flex;
     flex-direction: column;
-    background-color: rgba(147, 147, 139, 0.283);
+    background-color: rgba(247, 247, 247, 0.79);
     margin: 8px;
     border-radius: 8px;
     padding: 10px;
+    border: 1px solid rgba(56, 55, 55, 0.269);
+    gap: 10px
 }
 
 .cardContainer>h1 {
@@ -21,7 +25,7 @@
 
 .techDetails {
     display: flex;
-    gap: 20px;
+    align-items: center;
     justify-content: space-between;
 }
 
@@ -31,9 +35,52 @@
 
 .highlightDetails {
     display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.highlightDetails>div {
+    display: flex;
 }
 
 .time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
     font-weight: 700;
-    color: rgba(0, 0, 0, 0.831);
+    color: rgba(0, 0, 0, 0.475);
+}
+
+.techStack {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    background-color: rgba(170, 200, 221, 0.482);
+    padding: 4px 5px;
+
+}
+
+.easy {
+    color: green;
+    background-color: rgb(185, 231, 185);
+    font-weight: 600;
+    padding: 4px 8px;
+}
+
+.medium {
+    color: rgb(151, 103, 14);
+    background-color: rgba(255, 229, 181, 0.776);
+    font-weight: 600;
+    padding: 4px 8px;
+}
+
+.hard {
+    color: red;
+    background-color: rgb(243, 208, 208);
+    font-weight: 600;
+    padding: 4px 8px;
 }

@@ -1,0 +1,14 @@
+/* Borders */
+/* variables.css or utilities.css */
+
+.radius-sm {
+    border-radius: 6px;
+}
+
+.radius-md {
+    border-radius: 10px;
+}
+
+.radius-lg {
+    border-radius: 16px;
+}
