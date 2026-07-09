@@ -3,7 +3,7 @@ import "./Interview.css"
 import { mockData } from "../../constants/MockData"
 import QuestionCard from "../QuestionCard/QuestionCard"
 function Interview() {
-    const [interviewData, setInterviewData] = useState(mockData)
+    const [interviewData] = useState(mockData)
     return (
         <div className="interview-Container">
             {interviewData.map((interview) => (

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import userImg from "../../assets/user-image.jpg"
 import "./Header.css"
 import type { AppDispatch } from "../../store/store"
