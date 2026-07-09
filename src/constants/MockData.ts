@@ -1,213 +1,212 @@
 type Question = {
-    id: number;
-    title: string;
-    description: string;
-    tech: string[];
-    difficulty: "Easy" | "Medium" | "Hard";
-    companies: string[];
-    time: number;
-    completed: boolean;
+  id: number;
+  title: string;
+  description: string;
+  tech: string[];
+  difficulty: "Easy" | "Medium" | "Hard";
+  companies: string[];
+  time: number;
+  completed: boolean;
 };
-export const mockData: Question[] =
-    [
-        {
-            "id": 1,
-            "title": "24 Game",
-            "description": "Create a 24 Game in React js",
-            "tech": ["React.js"],
-            "difficulty": "Hard",
-            "companies": ["Startups"],
-            "time": 90,
-            "completed": false
-        },
-        {
-            "id": 2,
-            "title": "Product Cart with Discounts",
-            "description": "Build a Shopping Cart UI in React",
-            "tech": ["React.js"],
-            "difficulty": "Hard",
-            "companies": ["Amazon", "Flipkart", "Spotify"],
-            "time": 50,
-            "completed": false
-        },
-        {
-            "id": 3,
-            "title": "Rick And Morty Characters Viewer",
-            "description": "Fetch and display characters from API",
-            "tech": ["React.js"],
-            "difficulty": "Hard",
-            "companies": [],
-            "time": 50,
-            "completed": true
-        },
-        {
-            "id": 4,
-            "title": "Nested Comments",
-            "description": "Build a nested comment section",
-            "tech": ["React.js"],
-            "difficulty": "Hard",
-            "companies": ["Google", "Microsoft", "Adobe", "Flipkart"],
-            "time": 45,
-            "completed": false
-        },
-        {
-            "id": 5,
-            "title": "Event Management",
-            "description": "Create a calendar app with events",
-            "tech": ["React.js"],
-            "difficulty": "Hard",
-            "companies": ["Tekion", "Amazon", "Netflix"],
-            "time": 45,
-            "completed": false
-        },
-        {
-            "id": 6,
-            "title": "Infinite Scroll",
-            "description": "Implement infinite scrolling list",
-            "tech": ["React.js"],
-            "difficulty": "Medium",
-            "companies": ["Facebook", "Twitter"],
-            "time": 30,
-            "completed": false
-        },
-        {
-            "id": 7,
-            "title": "Debounced Search",
-            "description": "Search with debounce optimization",
-            "tech": ["React.js"],
-            "difficulty": "Medium",
-            "companies": ["Google"],
-            "time": 25,
-            "completed": false
-        },
-        {
-            "id": 8,
-            "title": "Image Carousel",
-            "description": "Create an auto sliding carousel",
-            "tech": ["React.js"],
-            "difficulty": "Easy",
-            "companies": ["Amazon"],
-            "time": 20,
-            "completed": true
-        },
-        {
-            "id": 9,
-            "title": "Tabs Component",
-            "description": "Build dynamic tabs UI",
-            "tech": ["React.js"],
-            "difficulty": "Easy",
-            "companies": [],
-            "time": 20,
-            "completed": true
-        },
-        {
-            "id": 10,
-            "title": "Multi Select Dropdown",
-            "description": "Create multi select dropdown",
-            "tech": ["React.js"],
-            "difficulty": "Medium",
-            "companies": ["Adobe"],
-            "time": 30,
-            "completed": false
-        },
-        {
-            "id": 11,
-            "title": "Pagination System",
-            "description": "Implement pagination with API",
-            "tech": ["React.js"],
-            "difficulty": "Medium",
-            "companies": ["Flipkart"],
-            "time": 35,
-            "completed": false
-        },
-        {
-            "id": 12,
-            "title": "Drag and Drop List",
-            "description": "Reorder items using drag and drop",
-            "tech": ["React.js"],
-            "difficulty": "Hard",
-            "companies": ["Trello"],
-            "time": 60,
-            "completed": false
-        },
-        {
-            "id": 13,
-            "title": "Chat UI",
-            "description": "Build a real-time chat UI",
-            "tech": ["React.js"],
-            "difficulty": "Hard",
-            "companies": ["WhatsApp"],
-            "time": 70,
-            "completed": false
-        },
-        {
-            "id": 14,
-            "title": "Theme Toggle",
-            "description": "Light/Dark mode toggle",
-            "tech": ["React.js"],
-            "difficulty": "Easy",
-            "companies": [],
-            "time": 15,
-            "completed": true
-        },
-        {
-            "id": 15,
-            "title": "Form Validation",
-            "description": "Build form with validation",
-            "tech": ["React.js"],
-            "difficulty": "Medium",
-            "companies": ["Netflix"],
-            "time": 25,
-            "completed": false
-        },
-        {
-            "id": 16,
-            "title": "Todo App with Filters",
-            "description": "Todo app with filtering options",
-            "tech": ["React.js"],
-            "difficulty": "Easy",
-            "companies": [],
-            "time": 20,
-            "completed": true
-        },
-        {
-            "id": 17,
-            "title": "File Upload UI",
-            "description": "Upload and preview files",
-            "tech": ["React.js"],
-            "difficulty": "Medium",
-            "companies": ["Google Drive"],
-            "time": 30,
-            "completed": false
-        },
-        {
-            "id": 18,
-            "title": "Dashboard Charts",
-            "description": "Create charts using data",
-            "tech": ["React.js"],
-            "difficulty": "Medium",
-            "companies": ["Uber"],
-            "time": 40,
-            "completed": false
-        },
-        {
-            "id": 19,
-            "title": "Authentication Flow",
-            "description": "Login/Signup flow with validation",
-            "tech": ["React.js"],
-            "difficulty": "Hard",
-            "companies": ["Amazon"],
-            "time": 60,
-            "completed": false
-        },
-        {
-            "id": 20,
-            "title": "Notifications System",
-            "description": "Toast and notification system",
-            "tech": ["React.js"],
-            "difficulty": "Medium",
-            "companies": ["Facebook"],
-            "time": 25,
-            "completed": false
-        }
-    ]
+export const mockData: Question[] = [
+  {
+    id: 1,
+    title: "24 Game",
+    description: "Create a 24 Game in React js",
+    tech: ["React.js"],
+    difficulty: "Hard",
+    companies: ["Startups"],
+    time: 90,
+    completed: false,
+  },
+  {
+    id: 2,
+    title: "Product Cart with Discounts",
+    description: "Build a Shopping Cart UI in React",
+    tech: ["React.js"],
+    difficulty: "Hard",
+    companies: ["Amazon", "Flipkart", "Spotify"],
+    time: 50,
+    completed: false,
+  },
+  {
+    id: 3,
+    title: "Rick And Morty Characters Viewer",
+    description: "Fetch and display characters from API",
+    tech: ["React.js"],
+    difficulty: "Hard",
+    companies: [],
+    time: 50,
+    completed: true,
+  },
+  {
+    id: 4,
+    title: "Nested Comments",
+    description: "Build a nested comment section",
+    tech: ["React.js"],
+    difficulty: "Hard",
+    companies: ["Google", "Microsoft", "Adobe", "Flipkart"],
+    time: 45,
+    completed: false,
+  },
+  {
+    id: 5,
+    title: "Event Management",
+    description: "Create a calendar app with events",
+    tech: ["React.js"],
+    difficulty: "Hard",
+    companies: ["Tekion", "Amazon", "Netflix"],
+    time: 45,
+    completed: false,
+  },
+  {
+    id: 6,
+    title: "Infinite Scroll",
+    description: "Implement infinite scrolling list",
+    tech: ["React.js"],
+    difficulty: "Medium",
+    companies: ["Facebook", "Twitter"],
+    time: 30,
+    completed: false,
+  },
+  {
+    id: 7,
+    title: "Debounced Search",
+    description: "Search with debounce optimization",
+    tech: ["React.js"],
+    difficulty: "Medium",
+    companies: ["Google"],
+    time: 25,
+    completed: false,
+  },
+  {
+    id: 8,
+    title: "Image Carousel",
+    description: "Create an auto sliding carousel",
+    tech: ["React.js"],
+    difficulty: "Easy",
+    companies: ["Amazon"],
+    time: 20,
+    completed: true,
+  },
+  {
+    id: 9,
+    title: "Tabs Component",
+    description: "Build dynamic tabs UI",
+    tech: ["React.js"],
+    difficulty: "Easy",
+    companies: [],
+    time: 20,
+    completed: true,
+  },
+  {
+    id: 10,
+    title: "Multi Select Dropdown",
+    description: "Create multi select dropdown",
+    tech: ["React.js"],
+    difficulty: "Medium",
+    companies: ["Adobe"],
+    time: 30,
+    completed: false,
+  },
+  {
+    id: 11,
+    title: "Pagination System",
+    description: "Implement pagination with API",
+    tech: ["React.js"],
+    difficulty: "Medium",
+    companies: ["Flipkart"],
+    time: 35,
+    completed: false,
+  },
+  {
+    id: 12,
+    title: "Drag and Drop List",
+    description: "Reorder items using drag and drop",
+    tech: ["React.js"],
+    difficulty: "Hard",
+    companies: ["Trello"],
+    time: 60,
+    completed: false,
+  },
+  {
+    id: 13,
+    title: "Chat UI",
+    description: "Build a real-time chat UI",
+    tech: ["React.js"],
+    difficulty: "Hard",
+    companies: ["WhatsApp"],
+    time: 70,
+    completed: false,
+  },
+  {
+    id: 14,
+    title: "Theme Toggle",
+    description: "Light/Dark mode toggle",
+    tech: ["React.js"],
+    difficulty: "Easy",
+    companies: [],
+    time: 15,
+    completed: true,
+  },
+  {
+    id: 15,
+    title: "Form Validation",
+    description: "Build form with validation",
+    tech: ["React.js"],
+    difficulty: "Medium",
+    companies: ["Netflix"],
+    time: 25,
+    completed: false,
+  },
+  {
+    id: 16,
+    title: "Todo App with Filters",
+    description: "Todo app with filtering options",
+    tech: ["React.js"],
+    difficulty: "Easy",
+    companies: [],
+    time: 20,
+    completed: true,
+  },
+  {
+    id: 17,
+    title: "File Upload UI",
+    description: "Upload and preview files",
+    tech: ["React.js"],
+    difficulty: "Medium",
+    companies: ["Google Drive"],
+    time: 30,
+    completed: false,
+  },
+  {
+    id: 18,
+    title: "Dashboard Charts",
+    description: "Create charts using data",
+    tech: ["React.js"],
+    difficulty: "Medium",
+    companies: ["Uber"],
+    time: 40,
+    completed: false,
+  },
+  {
+    id: 19,
+    title: "Authentication Flow",
+    description: "Login/Signup flow with validation",
+    tech: ["React.js"],
+    difficulty: "Hard",
+    companies: ["Amazon"],
+    time: 60,
+    completed: false,
+  },
+  {
+    id: 20,
+    title: "Notifications System",
+    description: "Toast and notification system",
+    tech: ["React.js"],
+    difficulty: "Medium",
+    companies: ["Facebook"],
+    time: 25,
+    completed: false,
+  },
+];

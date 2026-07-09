@@ -13,7 +13,8 @@ function Interview() {
                     description={interview.description}
                     difficulty={interview.difficulty}
                     companies={interview.companies}
-                    tech={interview.tech} />
+                    tech={interview.tech}
+                    time={interview.time} />
             ))}
         </div>
     )
