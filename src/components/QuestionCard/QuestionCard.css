@@ -11,6 +11,11 @@
     gap: 10px
 }
 
+.cardContainer:hover {
+    background-color: rgba(247, 247, 247, 0);
+    cursor: pointer;
+}
+
 .cardContainer>h1 {
     font-weight: bold;
     font-size: 17px;
@@ -60,27 +65,30 @@
     justify-content: center;
     gap: 2px;
     background-color: rgba(170, 200, 221, 0.482);
-    padding: 4px 5px;
-
 }
 
 .easy {
     color: green;
     background-color: rgb(185, 231, 185);
     font-weight: 600;
-    padding: 4px 8px;
+
 }
 
 .medium {
     color: rgb(151, 103, 14);
     background-color: rgba(255, 229, 181, 0.776);
     font-weight: 600;
-    padding: 4px 8px;
+
 }
 
 .hard {
     color: red;
     background-color: rgb(243, 208, 208);
     font-weight: 600;
-    padding: 4px 8px;
+
+}
+
+.companies {
+    color: rgb(134, 17, 244);
+    background-color: rgb(203, 184, 234);
 }

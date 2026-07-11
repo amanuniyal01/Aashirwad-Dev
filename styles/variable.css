@@ -10,3 +10,8 @@
 .radius-lg {
     border-radius: 16px;
 }
+
+/* Padding */
+.padding-sm {
+    padding: 4px 8px;
+}

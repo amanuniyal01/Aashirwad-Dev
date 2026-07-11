@@ -22,11 +22,16 @@ function QuestionCard({ title, description, tech, difficulty, companies, time }:
             <p>{description}</p>
             <div className="techDetails">
                 <div className="highlightDetails">
-                    <div className="techStack radius-md" > <FaReact color="#61DBFB" size={20} /><p>{tech}</p></div>
-                    <p className={`${difficultyClass[difficulty]} radius-md`}>
+                    <div className="techStack padding-sm radius-md" > <FaReact color="#61DBFB" size={20} /><p>{tech}</p></div>
+                    <p className={`${difficultyClass[difficulty]} padding-sm radius-md`}>
                         {difficulty}
                     </p>
-                    <p>{companies}</p>
+                    {/* <p className="companies">{companies.map((comp)=>(
+
+                    ))}</p> */}
+                    {companies.map((comp) => (
+                        <p className="radius-md padding-sm companies">{comp}</p>
+                    ))}
                 </div>
                 <div className="time">
                     <MdAccessTime /> {time} mins
