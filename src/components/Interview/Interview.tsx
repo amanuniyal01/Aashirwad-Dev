@@ -2,11 +2,60 @@ import { useState } from "react"
 import "./Interview.css"
 import { mockData } from "../../constants/MockData"
 import QuestionCard from "../QuestionCard/QuestionCard"
+const difficultiesOption = ["Easy", "Medium", "Hard"]
 function Interview() {
     const [interviewData] = useState(mockData)
+    const [difficulties, setDifficulties] = useState<string>("All Difficulties")
+    const [language, setLanguage] = useState<string>("All Languages")
+    const [difficultyOrder, setDifficultyOrder] = useState<string>("Default")
+
+    const filteredQuestions = interviewData.filter((ques) => {
+        const matchDifficulty =
+            difficulties === "All Difficulties" ||
+            ques.difficulty.toLowerCase() === difficulties.toLowerCase();
+
+        const matchLanguage =
+            language === "All Languages" ||
+            ques.tech.includes(language);
+
+        return matchDifficulty && matchLanguage;
+    });
+
     return (
         <div className="interview-Container">
-            {interviewData.map((interview) => (
+
+            <div className="FilterSection">
+                <select value={language} onChange={(e) => setLanguage(e.target.value)}>
+                    <option>All Languages</option>
+                    <option>JavaScript</option>
+                    <option>React.js</option>
+                </select>
+
+                <select
+                    value={difficulties}
+                    onChange={(e) => setDifficulties(e.target.value)}
+                >
+                    <option>All Difficulties</option>
+                    {difficultiesOption.map((opt, index) => (
+                        <option key={index}>{opt}</option>
+                    ))}
+                </select>
+                <select value={difficultyOrder} onChange={(e) => setDifficultyOrder(e.target.value)}>
+                    <option>
+                        Default
+                    </option>
+                    <option>
+                        Easy to Medium to Hard
+                    </option>
+                    <option>
+                        Hard to Medium to Easy
+                    </option>
+
+
+                </select>
+            </div>
+
+            {filteredQuestions.length > 0 ? filteredQuestions.map((interview) => (
                 <QuestionCard
                     key={interview.id}
                     title={interview.title}
@@ -15,7 +64,9 @@ function Interview() {
                     companies={interview.companies}
                     tech={interview.tech}
                     time={interview.time} />
-            ))}
+            )) : <p>
+                No Questions Found
+            </p>}
         </div>
     )
 }

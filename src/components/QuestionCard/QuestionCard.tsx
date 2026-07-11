@@ -18,11 +18,13 @@ const difficultyClass = {
 function QuestionCard({ title, description, tech, difficulty, companies, time }: Props) {
     return (
         <div className="cardContainer">
-            <h1>  {title}</h1>
-            <p>{description}</p>
+            <h1 className="heading">  {title}</h1>
+            <p className="description">{description}</p>
             <div className="techDetails">
                 <div className="highlightDetails">
-                    <div className="techStack padding-sm radius-md" > <FaReact color="#61DBFB" size={20} /><p>{tech}</p></div>
+                    {tech.map((t) => (
+                        <div className="techStack padding-sm radius-md" > <FaReact color="#61DBFB" size={20} /><p>{t}</p></div>
+                    ))}
                     <p className={`${difficultyClass[difficulty]} padding-sm radius-md`}>
                         {difficulty}
                     </p>

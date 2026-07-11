@@ -16,13 +16,18 @@
     cursor: pointer;
 }
 
-.cardContainer>h1 {
+.heading {
     font-weight: bold;
     font-size: 17px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.cardContainer>p {
+.heading:hover {
+    color: rgba(25, 97, 230, 0.662);
+
+}
+
+.description {
     font-size: 14px;
     color: rgba(0, 0, 0, 0.525);
     font-weight: 500;
