@@ -3,6 +3,13 @@ import "./Interview.css"
 import { mockData } from "../../constants/MockData"
 import QuestionCard from "../QuestionCard/QuestionCard"
 const difficultiesOption = ["Easy", "Medium", "Hard"]
+
+const difficultiesRank: Record<string, number> = {
+    Easy: 1,
+    Medium: 2,
+    Hard: 3
+}
+
 function Interview() {
     const [interviewData] = useState(mockData)
     const [difficulties, setDifficulties] = useState<string>("All Difficulties")
@@ -20,7 +27,17 @@ function Interview() {
 
         return matchDifficulty && matchLanguage;
     });
-
+    const sortedOrderQuestions = [...filteredQuestions].sort((a, b) => {
+        const rankA = difficultiesRank[a.difficulty]
+        const rankB = difficultiesRank[b.difficulty]
+        if (difficultyOrder === "Easy to Medium to Hard") {
+            return rankA - rankB;
+        }
+        if (difficultyOrder === "Hard to Medium to Easy") {
+            return rankB - rankA;
+        }
+        return 0;
+    })
     return (
         <div className="interview-Container">
 
@@ -55,7 +72,7 @@ function Interview() {
                 </select>
             </div>
 
-            {filteredQuestions.length > 0 ? filteredQuestions.map((interview) => (
+            {sortedOrderQuestions.length > 0 ? sortedOrderQuestions.map((interview) => (
                 <QuestionCard
                     key={interview.id}
                     title={interview.title}
