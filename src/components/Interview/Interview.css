@@ -1,3 +1,9 @@
 .interview-Container {
     height: 100vh;
 }
+
+.FilterSection {
+    margin: 12px;
+    display: flex;
+    gap: 10px
+}

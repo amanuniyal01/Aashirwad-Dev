@@ -42,13 +42,14 @@ function Interview() {
         <div className="interview-Container">
 
             <div className="FilterSection">
-                <select value={language} onChange={(e) => setLanguage(e.target.value)}>
+                <select className="filter-select" value={language} onChange={(e) => setLanguage(e.target.value)}>
                     <option>All Languages</option>
                     <option>JavaScript</option>
                     <option>React.js</option>
                 </select>
 
                 <select
+                    className="filter-select"
                     value={difficulties}
                     onChange={(e) => setDifficulties(e.target.value)}
                 >
@@ -57,7 +58,7 @@ function Interview() {
                         <option key={index}>{opt}</option>
                     ))}
                 </select>
-                <select value={difficultyOrder} onChange={(e) => setDifficultyOrder(e.target.value)}>
+                <select className="filter-select" value={difficultyOrder} onChange={(e) => setDifficultyOrder(e.target.value)}>
                     <option>
                         Default
                     </option>
