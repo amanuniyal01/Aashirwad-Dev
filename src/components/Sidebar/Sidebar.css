@@ -1,15 +1,16 @@
 .sidebar-container {
     top: 0;
-
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .cancel-btn {
-    position: absolute;
-    right: 25px;
     font-weight: 600;
+    font-size: 1.25rem;
 }
 
 .cancel-btn:hover {
     cursor: pointer;
-
 }

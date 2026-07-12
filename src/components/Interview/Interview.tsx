@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./Interview.css"
 import { mockData } from "../../constants/MockData"
 import QuestionCard from "../QuestionCard/QuestionCard"
+import { FiRefreshCw } from "react-icons/fi"
 const difficultiesOption = ["Easy", "Medium", "Hard"]
 
 const difficultiesRank: Record<string, number> = {
@@ -38,39 +39,55 @@ function Interview() {
         }
         return 0;
     })
+    const handleDifficultyOrder = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setDifficultyOrder(e.target.value)
+        setDifficulties("All Difficulties")
+    }
+
+    const handleReset = () => {
+        setDifficulties("All Difficulties")
+        setLanguage("All Languages")
+        setDifficultyOrder("Default")
+    }
     return (
         <div className="interview-Container">
 
             <div className="FilterSection">
-                <select className="filter-select" value={language} onChange={(e) => setLanguage(e.target.value)}>
-                    <option>All Languages</option>
-                    <option>JavaScript</option>
-                    <option>React.js</option>
-                </select>
+                <div className="FilterLanguages">
+                    <select className="filter-select" value={language} onChange={(e) => setLanguage(e.target.value)}>
+                        <option>All Languages</option>
+                        <option>JavaScript</option>
+                        <option>React.js</option>
+                    </select>
 
-                <select
-                    className="filter-select"
-                    value={difficulties}
-                    onChange={(e) => setDifficulties(e.target.value)}
-                >
-                    <option>All Difficulties</option>
-                    {difficultiesOption.map((opt, index) => (
-                        <option key={index}>{opt}</option>
-                    ))}
-                </select>
-                <select className="filter-select" value={difficultyOrder} onChange={(e) => setDifficultyOrder(e.target.value)}>
-                    <option>
-                        Default
-                    </option>
-                    <option>
-                        Easy to Medium to Hard
-                    </option>
-                    <option>
-                        Hard to Medium to Easy
-                    </option>
+                    <select
+                        className="filter-select"
+                        value={difficulties}
+                        onChange={(e) => setDifficulties(e.target.value)}
+                    >
+                        <option>All Difficulties</option>
+                        {difficultiesOption.map((opt, index) => (
+                            <option key={index}>{opt}</option>
+                        ))}
+                    </select>
+                    <select className="filter-select" value={difficultyOrder} onChange={handleDifficultyOrder}>
+                        <option>
+                            Default
+                        </option>
+                        <option>
+                            Easy to Medium to Hard
+                        </option>
+                        <option>
+                            Hard to Medium to Easy
+                        </option>
 
 
-                </select>
+                    </select>
+                </div>
+                <div onClick={handleReset} className="reset-btn">
+                    <button ><FiRefreshCw size={25} /></button>
+                </div>
+
             </div>
 
             {sortedOrderQuestions.length > 0 ? sortedOrderQuestions.map((interview) => (

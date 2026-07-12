@@ -1,14 +1,13 @@
 import { useRef, useState } from "react"
 import userImg from "../../assets/user-image.jpg"
 import "./Header.css"
-import type { AppDispatch } from "../../store/store"
-import { useDispatch } from "react-redux"
+import { useAppDispatch } from "../../store/store"
 import { openSidebar } from "../../Slices/appSlice"
 import { Link, useNavigate } from "react-router-dom"
 
 function Header() {
     const [isOpen, setIsOpen] = useState<boolean>(false)
-    const dispatch = useDispatch<AppDispatch>()
+    const dispatch = useAppDispatch()
     const sidebarRef = useRef<HTMLDivElement>(null)
     const navigate = useNavigate()
 
@@ -40,24 +39,24 @@ function Header() {
     ]
 
     return (
-        <div className="flex justify-between px-6 bg-black items-center">
+        <div className="flex bg-white py-3 fixed top-0 border-b justify-between w-screen px-6 items-center">
 
             {/* Sidebar btn */}
             <div className="flex sidebar-logo gap-3">
-                <div onClick={() => dispatch(openSidebar())} className="text-white">
+                <div onClick={() => dispatch(openSidebar())} className="text-black">
                     ☰
                 </div>
                 <div onClick={() => navigate("/")} className="site-logo">
                     <img
                         src="https://do6gp1uxl3luu.cloudfront.net/banner+and+logos/name.webp"
-                        height={130}
-                        width={130}
+                        height={150}
+                        width={150}
                     />
                 </div>
             </div>
 
             <div>
-                <ul className="header-list flex gap-8 items-center py-2 justify-center text-white">
+                <ul className="header-list flex font-semibold gap-8 items-center py-2 justify-center text-black">
                     <Link to="/interview"><li >Interview Practice</li></Link>
                     <li>Courses</li>
                     <li>Explore</li>
@@ -79,9 +78,9 @@ function Header() {
             {isOpen && (
                 <div
                     ref={sidebarRef}
-                    className="bg-black px-6 rounded-lg absolute right-5 top-15"
+                    className=" px-6 bg-white border rounded-lg absolute right-5 top-15"
                 >
-                    <ul className="text-white">
+                    <ul className="">
                         {list.map((item) => (
                             <li
                                 className="m-2 text-sm hover:cursor-pointer hover:text-blue-300"

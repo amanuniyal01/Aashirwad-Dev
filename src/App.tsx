@@ -1,8 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import Home from "./components/Home/Home"
 import Interview from "./components/Interview/Interview"
-import Layout from "./components/Layout/Layout"
-
+import { Layout } from "./components/Layout/Layout"
 
 function App() {
 

@@ -5,5 +5,21 @@
 .FilterSection {
     margin: 12px;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.FilterLanguages {
+    display: flex;
     gap: 10px
+}
+
+.reset-btn {
+    background-color: rgba(172, 168, 168, 0.285);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.reset-btn:hover {
+    cursor: pointer;
 }
