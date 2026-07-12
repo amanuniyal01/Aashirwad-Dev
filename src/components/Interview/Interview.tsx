@@ -3,7 +3,9 @@ import "./Interview.css"
 import { mockData } from "../../constants/MockData"
 import QuestionCard from "../QuestionCard/QuestionCard"
 import { FiRefreshCw } from "react-icons/fi"
+import { Tooltip } from "../ToolTip/ToolTip"
 const difficultiesOption = ["Easy", "Medium", "Hard"]
+const difficultiesLevel = [" Easy to Medium to Hard", "Hard to Medium to Easy"]
 
 const difficultiesRank: Record<string, number> = {
     Easy: 1,
@@ -74,18 +76,17 @@ function Interview() {
                         <option>
                             Default
                         </option>
-                        <option>
-                            Easy to Medium to Hard
-                        </option>
-                        <option>
-                            Hard to Medium to Easy
-                        </option>
+                        {difficultiesLevel.map((level) => (
+                            <option>{level}</option>
+                        ))}
 
 
                     </select>
                 </div>
                 <div onClick={handleReset} className="reset-btn">
-                    <button ><FiRefreshCw size={25} /></button>
+                    <Tooltip text="Reset your Filters">
+                        <button  ><FiRefreshCw size={25} /></button>
+                    </Tooltip>
                 </div>
 
             </div>

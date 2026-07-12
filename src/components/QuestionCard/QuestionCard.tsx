@@ -10,6 +10,7 @@ type Props = {
 import { MdAccessTime } from "react-icons/md";
 import "./QuestionCard.css"
 import { FaReact } from "react-icons/fa";
+import { Tooltip } from "../ToolTip/ToolTip";
 const difficultyClass = {
     Easy: "easy",
     Medium: "medium",
@@ -36,7 +37,9 @@ function QuestionCard({ title, description, tech, difficulty, companies, time }:
                     ))}
                 </div>
                 <div className="time">
-                    <MdAccessTime /> {time} mins
+                    <Tooltip text="time">
+                        <MdAccessTime /> {time} mins
+                    </Tooltip>
                 </div>
             </div>
 

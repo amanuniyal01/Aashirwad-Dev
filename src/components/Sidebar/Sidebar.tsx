@@ -35,7 +35,7 @@ function Sidebar() {
                 </span>
             </div>
 
-            <div className="px-4 py-3">
+            <div className="px-4 z-50 py-3">
                 {list.map((l, index) => (
                     <div key={`${l}-${index}`} className="py-3 font-semibold text-black">
                         <ul>
