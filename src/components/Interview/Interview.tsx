@@ -2,10 +2,11 @@ import { useState } from "react"
 import "./Interview.css"
 import { mockData } from "../../constants/MockData"
 import QuestionCard from "../QuestionCard/QuestionCard"
-import { FiRefreshCw } from "react-icons/fi"
+import { FiRefreshCw, FiSearch } from "react-icons/fi"
 import { Tooltip } from "../ToolTip/ToolTip"
+
 const difficultiesOption = ["Easy", "Medium", "Hard"]
-const difficultiesLevel = [" Easy to Medium to Hard", "Hard to Medium to Easy"]
+const difficultiesLevel = ["Easy to Medium to Hard", "Hard to Medium to Easy"]
 
 const difficultiesRank: Record<string, number> = {
     Easy: 1,
@@ -18,6 +19,7 @@ function Interview() {
     const [difficulties, setDifficulties] = useState<string>("All Difficulties")
     const [language, setLanguage] = useState<string>("All Languages")
     const [difficultyOrder, setDifficultyOrder] = useState<string>("Default")
+    const [input, setInput] = useState<string>("")
 
     const filteredQuestions = interviewData.filter((ques) => {
         const matchDifficulty =
@@ -28,8 +30,12 @@ function Interview() {
             language === "All Languages" ||
             ques.tech.includes(language);
 
-        return matchDifficulty && matchLanguage;
+        const matchQuestions =
+            ques.title.toLowerCase().includes(input.toLowerCase());
+
+        return matchDifficulty && matchLanguage && matchQuestions;
     });
+
     const sortedOrderQuestions = [...filteredQuestions].sort((a, b) => {
         const rankA = difficultiesRank[a.difficulty]
         const rankB = difficultiesRank[b.difficulty]
@@ -41,6 +47,7 @@ function Interview() {
         }
         return 0;
     })
+
     const handleDifficultyOrder = (e: React.ChangeEvent<HTMLSelectElement>) => {
         setDifficultyOrder(e.target.value)
         setDifficulties("All Difficulties")
@@ -51,9 +58,9 @@ function Interview() {
         setLanguage("All Languages")
         setDifficultyOrder("Default")
     }
+
     return (
         <div className="interview-Container">
-
             <div className="FilterSection">
                 <div className="FilterLanguages">
                     <select className="filter-select" value={language} onChange={(e) => setLanguage(e.target.value)}>
@@ -72,23 +79,30 @@ function Interview() {
                             <option key={index}>{opt}</option>
                         ))}
                     </select>
+
                     <select className="filter-select" value={difficultyOrder} onChange={handleDifficultyOrder}>
-                        <option>
-                            Default
-                        </option>
-                        {difficultiesLevel.map((level) => (
-                            <option>{level}</option>
+                        <option>Default</option>
+                        {difficultiesLevel.map((level, index) => (
+                            <option key={index}>{level}</option>
                         ))}
-
-
                     </select>
                 </div>
-                <div onClick={handleReset} className="reset-btn">
-                    <Tooltip text="Reset your Filters">
-                        <button  ><FiRefreshCw size={25} /></button>
-                    </Tooltip>
-                </div>
 
+                <div className="relative">
+                    <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
+                    <input
+                        value={input}
+                        onChange={(e) => setInput(e.target.value)}
+                        className="pl-9 pr-4 py-2 px-15 bg-gray-50 border border-gray-300 rounded-lg
+                   focus:outline-none focus:ring-0 focus:border-transparent"
+                        placeholder="Search Problems..."
+                    />
+                </div>
+                <Tooltip text="Reset your Filters">
+                    <button onClick={handleReset} className="reset-btn">
+                        <FiRefreshCw size={25} />
+                    </button>
+                </Tooltip>
             </div>
 
             {sortedOrderQuestions.length > 0 ? sortedOrderQuestions.map((interview) => (
@@ -100,9 +114,7 @@ function Interview() {
                     companies={interview.companies}
                     tech={interview.tech}
                     time={interview.time} />
-            )) : <p>
-                No Questions Found
-            </p>}
+            )) : <p>No Questions Found</p>}
         </div>
     )
 }
