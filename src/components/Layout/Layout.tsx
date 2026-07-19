@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import type { RootState } from "../../store/store";
 import { useAppSelector } from "../../store/store";
 
-export const Layout = () => {
+const Layout = () => {
     const sidebarOpen = useAppSelector((state: RootState) => state.sidebarOpen.isOpen);
 
     useEffect(() => {
@@ -41,3 +41,4 @@ export const Layout = () => {
         </div>
     );
 }
+export default Layout

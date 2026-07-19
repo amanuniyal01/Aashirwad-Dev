@@ -58,7 +58,7 @@ function Header() {
             <div>
                 <ul className="header-list flex font-semibold gap-8 items-center py-2 justify-center text-black">
                     <Link to="/interview"><li >Interview Practice</li></Link>
-                    <li>Courses</li>
+                    <Link to="/courses"><li>Courses</li></Link>
                     <li>Explore</li>
                     <li>Streak</li>
                     <li>

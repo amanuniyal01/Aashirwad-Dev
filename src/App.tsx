@@ -1,18 +1,21 @@
 import { Route, Routes } from "react-router-dom"
-import Home from "./components/Home/Home"
-import Interview from "./components/Interview/Interview"
-import { Layout } from "./components/Layout/Layout"
+import { lazy, Suspense } from "react"
 
+const Home = lazy(() => import("./components/Home/Home"));
+const Interview = lazy(() => import("./components/Interview/Interview"))
+const Layout = lazy(() => import('./components/Layout/Layout'))
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="interview" element={<Interview />} />
-      </Route>
-    </Routes>
-
+    <Suspense fallback={<div>Loading...</div>}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="interview" element={<Interview />} />
+          <Route path="courses" element={<Interview />} />
+        </Route>
+      </Routes>
+    </Suspense>
   )
 }
 
