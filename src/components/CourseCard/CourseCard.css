@@ -1,0 +1,38 @@
+.cardWrapper {
+
+    background-color: rgba(191, 183, 183, 0.888);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.card-image {
+    height: 25vh;
+    width: 20vw;
+    border-radius: 10px;
+}
+
+.imageTitle {
+    font-weight: bold;
+}
+
+.smallDetails {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ratings {
+    display: flex;
+    gap: 10px
+}
+
+.description {
+    max-width: 20vw;
+}
+
+.btn-card {
+    background-color: rgba(255, 157, 10, 0.815);
+    padding: 6px 8px;
+    color: white;
+    font-weight: bold;
+    border-radius: 14px;
+}

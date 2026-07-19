@@ -1,11 +1,26 @@
 import { useState } from "react"
-import { defaultCourse } from "../../Interfaces/CourseDataModal"
 import type { CourseData } from "../../Interfaces/CourseDataModal"
-function Courses() {
-    const [coursesData, setCoursesData] = useState<CourseData>(defaultCourse)
+import { coursesMockData } from "../../constants/CaourseData"
+import CourseCard from "../CourseCard/CourseCard"
+import "./Courses.css"
+function Courses(
+) {
+    const [coursesData, setCoursesData] = useState<CourseData[]>(coursesMockData)
     return (
-        <div>
+        <div className="courseWrapper">
+            {coursesData.map((course) => (
+                <CourseCard imageSrc={course.imageName}
+                    imageAlt={course.title}
+                    title={course.title}
+                    badge={course.badge}
+                    language={course.language}
+                    rating={course.rating}
+                    reviews={course.reviews || ""}
+                    description={course.description}
+                    button={course.buttonText ?? ""}
+                />
 
+            ))}
         </div>
     )
 }

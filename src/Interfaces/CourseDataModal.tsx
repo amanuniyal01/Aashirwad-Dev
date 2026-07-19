@@ -2,26 +2,37 @@ export interface CourseData {
     id: number;
     imageName: string;
     title: string;
+    badge: "PREMIUM" | "FREE";
+    status: "COMING SOON" | "ENROLLED" | null;
+    language: string;
+    rating: number | null;
+    reviews: string | null;
     description: string;
-    instructor: string;
-    category: string;
-    price: string;
-    rating: number;
-    students: string;
-    duration: string;
+    countdown: { days: number; hours: number; mins: number; secs: number } | null;
+    buttonText: string | null;
+    enrolled: boolean;
+    progress: string | null;
+}
+
+export interface BundleData {
+    id: number;
+    imageName: string;
+    title: string;
+    badge: "PREMIUM" | null;
+    language: string | null;
+    includes: string[];
+    description: string;
     buttonText: string;
 }
 
-export const defaultCourse: CourseData = {
-    id: 0,
-    imageName: "",
-    title: "",
-    description: "",
-    instructor: "",
-    category: "",
-    price: "",
-    rating: 0,
-    students: "",
-    duration: "",
-    buttonText: "",
-};
+export interface PartnerCourseDetail {
+    instructor: string;
+    title: string;
+    imageName: string;
+    thumbnailText: string;
+    thumbnailSubtext: string;
+    badge: "PREMIUM" | "FREE";
+    description: string;
+    features: string[];
+    buttonText: string;
+}

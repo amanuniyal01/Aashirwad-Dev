@@ -39,7 +39,7 @@ function Header() {
     ]
 
     return (
-        <div className="flex bg-white py-3 fixed top-0 border-b justify-between w-screen px-6 items-center">
+        <div className="flex z-50 bg-white py-3 fixed top-0 border-b justify-between w-screen px-6 items-center">
 
             {/* Sidebar btn */}
             <div className="flex sidebar-logo gap-3">
